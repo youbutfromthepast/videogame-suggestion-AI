@@ -1,0 +1,178 @@
+[
+    {
+        "title": "Final Fantasy",
+        "genre": "Role-Playing Japanese-Style",
+        "console": "NES",
+        "developer": "SquareSoft",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 8,
+        "length": 35,
+        "description": "This classic console fantasy RPG spawned an unstoppable series of great games. The graphics and sound are shadows of its descendants, but the gameplay is addictive and the story is stunningly rich and thoughtful. Players guide parties of four characters on a series of quests to defeat four ancient demons and save the world--which is also stuck in a time loop!"
+    },
+    {
+        "title": "The Legend of Zelda",
+        "genre": "Action Adventure Open-World",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 8,
+        "length": 22,
+        "description": "In this classic NES game, you'll embark on a quest to find the Triforce, slay Ganon, and save Princess Zelda. The Legend of Zelda comes to the Game Boy Advance, complete with all the dungeons, puzzles, and menacing enemies from the original game. As Link, you can brandish a variety of weapons, including swords, boomerangs, bombs, and arrows. Collect rupees to buy even more weapons and other special items. There are many secrets, hidden passages, and caves to be found in Hyrule--now you can see if you still have what it takes to find them."
+    },
+    {
+        "title": "Super Mario Bros. 3",
+        "genre": "Action Platformer 2D",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 9,
+        "difficulty": 6,
+        "length": 18,
+        "description": "New, different worlds!\nNew exciting levels!\nNew challenges galore!\n\nFight monsters and mini-bosses, avoid ghosts and the burning sun. Make your way through water and quicksand. Dodge cannonballs and bullets and rescue the King's Wand!\n\nIn Super Mario Bros. 3, there are more warps, more chances at extra lives, and new special suits! The Raccoon Suit lets you fly and knock out blocks. The Frog Suit helps you out-swim deadly fish. There are suits for every occasion!\n\nStore up flowers and mushrooms to use later on. Play game-show type bonus rounds! Go back to that last screen and get a mushroom! Pause to take a break, then continue where you left off!\n\nSuper Mario Bros. 3 is fun to play alone, or team up with a buddy to prolong the adventure!"
+    },
+    {
+        "title": "Final Fantasy III",
+        "genre": "Role-Playing Japanese-Style",
+        "console": "NES",
+        "developer": "SquareSoft",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 6,
+        "length": 39,
+        "description": "Final Fantasy III is a role-playing video game developed and published by Square for the Family Computer. The third installment in the Final Fantasy series, it is the first numbered Final Fantasy game to feature the job-change system. The story revolves around four orphaned youths drawn to a crystal of light. The crystal grants them some of its power, and instructs them to go forth and restore balance to the world. Not knowing what to make of the crystal's pronouncements, but nonetheless recognizing the importance of its words, the four inform their adoptive families of their mission and set out to explore and bring back balance to the world."
+    },
+    {
+        "title": "Zelda II: The Adventure of Link",
+        "genre": "Role-Playing Action RPG",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 7,
+        "difficulty": 8,
+        "length": 22,
+        "description": "The sequel to The Legend of Zelda combines side-scrolling action with role-playing game elements. In Zelda II: The Adventure of Link, you'll embark on a quest to find the Triforce of Courage, awaken Princess Zelda from an evil wizard's spell, and save Hyrule from ruin. As Link, you can learn magic spells and collect items to increase your power. Zelda II features magic that lets you fly, throw fireballs, jump higher, and more."
+    },
+    {
+        "title": "Dragon Quest",
+        "genre": "Role-Playing Japanese-Style",
+        "console": "NES",
+        "developer": "ChunSoft",
+        "esrb": 2,
+        "rating": 7,
+        "difficulty": 8,
+        "length": 26,
+        "description": "Dragon Warrior...the epic beginning of a new era in video games. Mere finger speed and sweat are no match for the challenges of this game. You will be required to use deductive reasoning, not a quick sword to defeat your enemies. All is darkness. The Dragon-lord has captured the Princess and stolen Erdrick's powerful ball of light. You are Erdrick's heir. To you has fallen the most dangerous task -- to rescue the King's daughter and recover the mystic ball of light. Your mission is deadly, but it is your fate. Prophets have long foretold your coming.\nThree keepers await your journey, each ready to aid you with a mystic item of great power. Gather the three objects. Scribes will record your deeds. Use cunning and wisdom to choose your commands. Gain experience, weapons and armor as you battle your way through the world. Rest if you must. Search out the Dragon-lord's lair and face your destiny. In this role-playing adventure, you are the Dragon Warrior!"
+    },
+    {
+        "title": "Dragon Quest III",
+        "genre": "Role-Playing Japanese-Style",
+        "console": "NES",
+        "developer": "ChunSoft",
+        "esrb": 2,
+        "rating": 8,
+        "difficulty": 6,
+        "length": 45,
+        "description": "You get to control a young hero (male or female) in the land of Aliahan who is called upon by the king to defeat the Demon Lord Baramos. Your quest will take you through more than 50 caves, dungeons and towns, each filled with monsters to defeat and puzzles to solve. You can stock your traveling party with three companions from nine character classes, each with unique strengths and weaknesses. Dragon Quest III is an RPG fan's dream come true!"
+    },
+    {
+        "title": "Super Mario Bros.",
+        "genre": "Action Platformer 2D",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 6,
+        "length": 12,
+        "description": "Do you have what it takes to save the Mushroom Princess? You'll have to think fast and move even faster to complete this quest! The Mushroom Princess is being held captive by the evil Koopa tribe of turtles. It's up to you to rescue her from the clutches of the Koopa King before time runs out. But it won't be easy. To get to the princess, you'll have to climb mountains, cross seas, avoid bottomless pits, fight off turtle soldiers and a host of black magic traps that only a Koopa King can devise. It's another non-stop adventure from the SUPER MARIO BROS.!"
+    },
+    {
+        "title": "Final Fantasy II",
+        "genre": "Role-Playing Japanese-Style",
+        "console": "NES",
+        "developer": "SquareSoft",
+        "esrb": 1,
+        "rating": 7,
+        "difficulty": 8,
+        "length": 37,
+        "description": "FINAL FANTASY II is highly anticipated follow-up to the original FINAL FANTASY, released in Japan in 1988. The game features the bitter and beautiful tale of four war-orphaned heroes who become embroiled in a conflict between the hostile Empire of Palamecia and the rebel resistance. By eschewing conventional leveling for a proficiency system that allows players to tailor their characters' growth and incorporating a key term memory system that makes dialogue integral to gameplay, this game sparked the spirit of innovation for which the series has become known."
+    },
+    {
+        "title": "Mike Tyson's Punch-Out!!",
+        "genre": "Sports Boxing Martial Arts",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 1,
+        "rating": 8,
+        "difficulty": 8,
+        "length": 12,
+        "description": "It's a right jab, a left hook, an uppercut - it's Mike Tyson's Punch-Out!! where you'll get the chance to compete against boxers from around the globe. Punch your way through 13 bouts in the minor, major and world circuits against tough contestants like Piston Honda, Glass Joe, Super Macho Man and many, many more! Defeat all your opponents and meet the ultimate challenge against the World Heavyweight Champion Mike Tyson in the greatest fight of all - The Dream Bout! Knockout Tyson and you can become WVBA (World Video Boxing Association) Champ!"
+    },
+    {
+        "title": "Mega Man",
+        "genre": "Action Platformer 2D",
+        "console": "NES",
+        "developer": "Capcom",
+        "esrb": 0,
+        "rating": 7,
+        "difficulty": 8,
+        "length": 8,
+        "description": "The action involves MEGA MAN armed only with laser beam weapons, encountering strangely configured Humanoids. They're atop, in and out of fortified prison-like structures strengthened with thick walls. Below icefields. Hidden amid gun turrets imbedded in concrete uprights, even in subterranean passages under icefields. WOW! Will you and Mega Man penetrate the seven separate societies of Dr. Wily and preserve the human race? You're in control!"
+    },
+    {
+        "title": "Mega Man 2",
+        "genre": "Action Platformer 2D",
+        "console": "NES",
+        "developer": "Capcom",
+        "esrb": 0,
+        "rating": 9,
+        "difficulty": 8,
+        "length": 9,
+        "description": "Mega Man 2 is an action game developed and published by Capcom for the Nintendo Entertainment System. It was released in Japan in 1988 and in North America and PAL regions the following years. Mega Man 2 continues Mega Man's battle against the evil Dr. Wily and his rogue robots. It introduced graphical and gameplay changes, many of which became series staples. "
+    },
+    {
+        "title": "Metroid",
+        "genre": "Action Platformer 2D Metroidvania",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 8,
+        "length": 13,
+        "description": "As Samus Aran, your mission is to keep space pirates from destroying the galaxy with their Metroids. To do this, you must penetrate Zebes, the pirates' home planet, while collecting special items to attack enemies in new ways. Metroid offers side-scrolling action that tests your dexterity and brings you back to classic '80s gaming."
+    },
+    {
+        "title": "Castlevania",
+        "genre": "Action Platformer 2D Metroidvania",
+        "console": "NES",
+        "developer": "Konami",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 8,
+        "length": 9,
+        "description": "If you think it's scary on the outside, wait'll you see the basement! You're in for the longest night of your life. Ghosts, goblins, demons, wolves, bats - creatures lurking around every corner. As you descend deeper and deeper, they get thicker and thicker. Better stick close to the cavern floor - it's your only chance of finding a weapon or two. You're gonna need 'em. Because when you finally meet the Count, you know he'll be going for the jugular. So keep your courage up and your stake sharp. And say your prayers!"
+    },
+    {
+        "title": "Tetris",
+        "genre": "Puzzle Stacking",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 8,
+        "difficulty": 6,
+        "length": 7,
+        "description": "Beams, boxes, zig-zags and L-shaped blocks drop down a narrow passage. Feel your pulse quicken as you spin, shift and align the shapes for a perfect fit. It's challenging and demands split-second decision making! Start at new heights for a tougher contest. Pick the music and set your pace from 20 progressive skill levels!"
+    },
+    {
+        "title": "Excitebike",
+        "genre": "Racing Arcade",
+        "console": "NES",
+        "developer": "Nintendo",
+        "esrb": 0,
+        "rating": 7,
+        "difficulty": 6,
+        "length": 9,
+        "description": "You'll start out in a preliminary race, and move through a series of increasingly difficult challenge races! You'll face crazy curves, hairpin turns, daredevil jumps, and some very fierce motorcross competition, as you race your bike towards the checkered flag. This thrilling test of driving strategy and skill will keep you riveted for hours!"
+    }
+]
