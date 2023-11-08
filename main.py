@@ -65,7 +65,7 @@ def add_data_to_collection(data, collection):
     )
 
 
-def get_results(query, dev_filter, esrb_filter, console_filter=[], n_results=2, rating_minimum=0, rating_maximum=10, difficulty_minimum=0, difficulty_maximum=10, length_minimum=0, length_maximum=50):
+def get_results(query, dev_filter, esrb_filter, console_filter=[], n_results=2, rating_minimum=0, rating_maximum=10, difficulty_minimum=0, difficulty_maximum=10, length_minimum=0, length_maximum=70):
     metadatas = []
 
     # adds condition of rating minimum and maximum
@@ -141,23 +141,23 @@ for result in results:
 
 # Gradio UI and deployment
 with gr.Blocks() as demo:
-    with gr.Tab("Game Finder"):
+    with gr.Tab("Retro Game Finder"):
         with gr.Row():
             with gr.Column():
-                query = gr.Textbox(label="What are you looking for in your game?", info="(Ex: sci-fi shooter, scary monsters, magic powers)", lines=5)
+                query = gr.Textbox(label="What are you looking for in your game?", info="This search engine draws from a collection of over 80 games! Type in keywords of what you want (Ex: sci-fi, military, magic, fighting) or a game that you want something similar to (Ex: The Legend of Zelda, Metroid, Sonic the Hedgehog)", lines=5)
                 dev_filter = gr.Dropdown(
-                    ["Nintendo", "SquareSoft", "ChunSoft", "Capcom", "Konami"],
+                    ["Nintendo", "SquareSoft", "ChunSoft", "Capcom", "Konami", "Million", "Rare", "Natsume", "Acclaim", "Motown Games", "Probe Software", "Namco", "Naughty Dog", "Activision", "NanaOn-Sha", "Bandai", "SingleTrac", "Fox Interactive", "Midway Studios", "Electronic Arts", "Hudson", "THQ", "Looking Glass Studios"],
                     multiselect=True,
                     label="Developers",
                     info="Specific game devs? Leave blank for no filters"
                 )
                 esrb_filter = gr.CheckboxGroup(
-                    ["EVERYONE", "EVERYONE 10+", "TEEN", "MATURE 17+", "ADULTS ONLY 18+"],
+                    ["EVERYONE", "EVERYONE 10+", "TEEN", "MATURE 17+"],
                     label="ESRB Rating",
                     info="Age restrictions? Leave blank for no filters"
                 )
                 console_filter = gr.CheckboxGroup(
-                    ["NES"],
+                    ["NES", "Super Nintendo", "Genesis", "Game Boy", "Playstation", "Dreamcast"],
                     label="Consoles",
                     info="Specific consoles only? Leave blank for no filters"
                 )
@@ -168,8 +168,8 @@ with gr.Blocks() as demo:
                     difficulty_minimum = gr.Slider(label="Minimum difficulty", minimum=0, maximum=10, value=0, step=1)
                     difficulty_maximum = gr.Slider(label="Maximum difficulty", minimum=0, maximum=10, value=10, step=1)
                 with gr.Row():
-                    length_minimum = gr.Slider(label="Minimum hours", minimum=0, maximum=50, value=0, step=1, info="The shortest game in the database is -")
-                    length_maximum = gr.Slider(label="Maximum hours", minimum=0, maximum=50, value=50, step=1, info="The longest game in the database is -")
+                    length_minimum = gr.Slider(label="Minimum hours", minimum=0, maximum=70, value=0, step=1, info="The shortest game in the database is 4 hours long")
+                    length_maximum = gr.Slider(label="Maximum hours", minimum=0, maximum=70, value=70, step=1, info="The longest game in the database is 68 hours long")
                 n_results = gr.Slider(label="Results to Display", info="If there are not enough results, it will display what is available", minimum=0, maximum=10, value=2, step=1)
                 btn = gr.Button(value="Submit")
                 table = gr.Dataframe(label="Results", headers=['title', 'developer', 'genre', 'console', 'esrb', 'rating', 'difficulty', 'length', 'description'], wrap=True)
