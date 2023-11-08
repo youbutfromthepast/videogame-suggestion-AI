@@ -41,14 +41,14 @@ def add_data_to_collection(data, collection):
         genre = game['genre']
         console = game['console']
         developer = game['developer']
-        # esrb = game['esrb']
+        esrb = game['esrb']
         rating = game['rating']
-        # difficulty = game['difficulty']
-        # length = game['length']
+        difficulty = game['difficulty']
+        length = game['length']
         description = game['description']
 
         # specific attributes being embedded
-        embeddable_string = f"{title}{genre}{console}{developer}{rating}{description}"
+        embeddable_string = f"{title}{genre}{console}{developer}{esrb}{rating}{difficulty}{length}{description}"
         documents.append(embeddable_string)
 
         # stores as metadata
@@ -65,7 +65,7 @@ def add_data_to_collection(data, collection):
     )
 
 
-def get_results(query, dev_filter, console_filter=[], n_results=2, rating_minimum=0, rating_maximum=10):
+def get_results(query, dev_filter, esrb_filter, console_filter=[], n_results=2, rating_minimum=0, rating_maximum=10, difficulty_minimum=0, difficulty_maximum=10, length_minimum=0, length_maximum=50):
     metadatas = []
 
     # adds condition of rating minimum and maximum
@@ -75,14 +75,28 @@ def get_results(query, dev_filter, console_filter=[], n_results=2, rating_minimu
         },
         {
             "rating": {"$lte": rating_maximum}
+        },
+        {
+            "difficulty": {"$gte": difficulty_minimum}
+        },
+        {
+            "difficulty": {"$lte": difficulty_maximum}
+        },
+        {
+            "length": {"$gte": length_minimum}
+        },
+        {
+            "length": {"$lte": length_maximum}
         }
     ]
 
     if dev_filter:
         where_conditions.append({"developer": {"$in": dev_filter}})
 
+    if esrb_filter:
+        where_conditions.append({"esrb": {"$in": esrb_filter}})
+
     if console_filter:
-        print(console_filter)
         where_conditions.append({"console": {"$in": console_filter}})
 
     results = collection.query(
@@ -98,11 +112,11 @@ def get_results(query, dev_filter, console_filter=[], n_results=2, rating_minimu
     return metadatas
 
 
-def search(query, dev_filter, console_filter, n_results, rating_minimum, rating_maximum):
-    results = get_results(query, dev_filter, console_filter, n_results=n_results, rating_minimum=rating_minimum, rating_maximum=rating_maximum)
+def search(query, dev_filter, esrb_filter, console_filter, n_results, rating_minimum, rating_maximum, difficulty_minimum, difficulty_maximum, length_minimum, length_maximum):
+    results = get_results(query, dev_filter, esrb_filter, console_filter, n_results, rating_minimum, rating_maximum, difficulty_minimum, difficulty_maximum, length_minimum, length_maximum)
 
     try:
-        df = pd.DataFrame(results, columns=['title', 'genre', 'console', 'developer', 'rating', 'description'])
+        df = pd.DataFrame(results, columns=['title', 'developer', 'genre', 'console', 'esrb', 'rating', 'difficulty', 'length', 'description'])
         return df
     except Exception as e:
         raise gr.Error(e.message)
@@ -118,7 +132,7 @@ collection = get_chroma_collection("games")
 add_data_to_collection(data, collection)
 
 # result check
-results = get_results("adventure", ["Capcom", "ChunSoft", "Nintendo"], ["Super Nintendo"], n_results=3, rating_minimum=0, rating_maximum=10)
+results = get_results("adventure", [], [], ["NES"], n_results=3, rating_minimum=0, rating_maximum=10, difficulty_minimum=2, difficulty_maximum=8, length_minimum=6, length_maximum=20)
 
 
 
@@ -130,22 +144,34 @@ with gr.Blocks() as demo:
     with gr.Tab("Game Finder"):
         with gr.Row():
             with gr.Column():
-                query = gr.Textbox(label="What are you looking for?", lines=5)
+                query = gr.Textbox(label="What are you looking for in your game?", info="(Ex: sci-fi shooter, scary monsters, magic powers)", lines=5)
                 dev_filter = gr.Dropdown(
                     ["Nintendo", "SquareSoft", "ChunSoft", "Capcom", "Konami"],
                     multiselect=True,
-                    label="Preferred developers?"
+                    label="Developers",
+                    info="Specific game devs? Leave blank for no filters"
+                )
+                esrb_filter = gr.CheckboxGroup(
+                    ["EVERYONE", "EVERYONE 10+", "TEEN", "MATURE 17+", "ADULTS ONLY 18+"],
+                    label="ESRB Rating",
+                    info="Age restrictions? Leave blank for no filters"
                 )
                 console_filter = gr.CheckboxGroup(
-                    ["NES", "Super Nintendo", "Playstation", "Dreamcast", "Playstation 3", "Xbox 360", "Playstation 4", "Nintendo Switch", "PC", "Game Boy", "Game Boy Color", "Game Boy Advance", "DS", "PSP", "3DS", "iOS", "Android"],
-                    label="Console filter",
-                    info="Specific consoles only?"
+                    ["NES"],
+                    label="Consoles",
+                    info="Specific consoles only? Leave blank for no filters"
                 )
                 with gr.Row():
                     rating_minimum = gr.Slider(label="Minimum rating", minimum=0, maximum=10, value=0, step=1)
                     rating_maximum = gr.Slider(label="Maximum rating", minimum=0, maximum=10, value=10, step=1)
-                n_results = gr.Slider(label="Results to Display", minimum=0, maximum=10, value=2, step=1)
+                with gr.Row():
+                    difficulty_minimum = gr.Slider(label="Minimum difficulty", minimum=0, maximum=10, value=0, step=1)
+                    difficulty_maximum = gr.Slider(label="Maximum difficulty", minimum=0, maximum=10, value=10, step=1)
+                with gr.Row():
+                    length_minimum = gr.Slider(label="Minimum hours", minimum=0, maximum=50, value=0, step=1, info="The shortest game in the database is -")
+                    length_maximum = gr.Slider(label="Maximum hours", minimum=0, maximum=50, value=50, step=1, info="The longest game in the database is -")
+                n_results = gr.Slider(label="Results to Display", info="If there are not enough results, it will display what is available", minimum=0, maximum=10, value=2, step=1)
                 btn = gr.Button(value="Submit")
-                table = gr.Dataframe(label="Results", headers=['title', 'genre', 'console', 'developer', 'rating', 'description'], wrap=True)
-            btn.click(search, inputs=[query, dev_filter, console_filter, n_results, rating_minimum, rating_maximum], outputs=[table])
+                table = gr.Dataframe(label="Results", headers=['title', 'developer', 'genre', 'console', 'esrb', 'rating', 'difficulty', 'length', 'description'], wrap=True)
+            btn.click(search, inputs=[query, dev_filter, esrb_filter, console_filter, n_results, rating_minimum, rating_maximum, difficulty_minimum, difficulty_maximum, length_minimum, length_maximum], outputs=[table])
     demo.launch(share=True)
